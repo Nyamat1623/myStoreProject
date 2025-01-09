@@ -10,7 +10,7 @@ import com.mystore.pageobjects.homepage;
 public class loginPage_Test extends baseClass {
 
 	homepage hp;
-	LoginPage lg;
+	LoginPage lg;;
 	
 	
 	@BeforeMethod
