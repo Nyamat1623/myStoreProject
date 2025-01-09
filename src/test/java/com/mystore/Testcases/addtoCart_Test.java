@@ -27,7 +27,7 @@ public class addtoCart_Test extends baseClass {
 	public void setup() {
 		launchapp();
 	}
-	
+	 
 	@AfterMethod
 	public void teardown() {
 		driver.quit();
