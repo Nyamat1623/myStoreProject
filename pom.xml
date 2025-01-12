@@ -11,75 +11,60 @@
     <version>7.10.2</version>
     <scope>test</scope>
 </dependency>
-
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
     <version>4.27.0</version>
 </dependency>
-
 <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 <dependency>
     <groupId>commons-io</groupId>
     <artifactId>commons-io</artifactId>
     <version>2.18.0</version>
 </dependency>
-
-
-
 <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
 <dependency>
     <groupId>io.github.bonigarcia</groupId>
     <artifactId>webdrivermanager</artifactId>
     <version>5.9.2</version>
 </dependency>
-   
-   
     <!-- Apache POI for handling .xls files -->
     <dependency>
         <groupId>org.apache.poi</groupId>
         <artifactId>poi</artifactId>
         <version>5.0.0</version> <!-- Use the latest version -->
     </dependency>
-
     <!-- Apache POI for handling .xlsx files -->
     <dependency>
         <groupId>org.apache.poi</groupId>
         <artifactId>poi-ooxml</artifactId>
         <version>5.0.0</version> <!-- Use the latest version -->
     </dependency>
-
     <!-- Required for handling XML schemas -->
     <dependency>
         <groupId>org.apache.xmlbeans</groupId>
         <artifactId>xmlbeans</artifactId>
         <version>5.1.1</version> <!-- Use the latest version -->
     </dependency>
-
     <!-- Optional: For working with common utilities -->
     <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-collections4</artifactId>
         <version>4.4</version> <!-- Use the latest version -->
     </dependency>
-
-   
-
     <!-- SLF4J API -->
     <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
         <version>1.7.30</version> <!-- Use the latest version -->
     </dependency>
-
     <!-- SLF4J Simple Logger -->
     <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-simple</artifactId>
         <version>1.7.30</version> <!-- Use the latest version -->
     </dependency>
-
     <!-- Log4j Core -->
     <dependency>
         <groupId>org.apache.logging.log4j</groupId>
@@ -101,7 +86,23 @@
     <version>5.1.1</version>
 </dependency>
 
+<plugin>
 
+
+
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.5.2</version>
+<configuration>
+<suiteXmlFiles>   
+<suiteXmlFile>${xmlFiles}</suiteXmlFile>
+</suiteXmlFiles>
+<systemPropertyVariables>
+<appURL>${url}</appURL>
+</systemPropertyVariables>
+</configuration>
+
+</plugin>
 </dependencies>
 
 </project>
