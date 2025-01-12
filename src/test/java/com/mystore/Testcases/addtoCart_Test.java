@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.mystore.base.baseClass;
@@ -23,17 +24,18 @@ public class addtoCart_Test extends baseClass {
 	homepage hm;
 	proceedTocart proceedTocart;
 	
-	@BeforeMethod
-	public void setup() {
-		launchapp();
+	@Parameters("browser")
+	@BeforeMethod(groups = {"Smoke","Sanity","Regression"})
+	public void setup(String browser) {
+		launchapp(browser);
 	}
 	 
-	@AfterMethod
+	@AfterMethod(groups = {"Smoke","Sanity","Regression"})
 	public void teardown() {
 		getDriver().quit();
 	}
 	
-	@Test
+	@Test (groups = {"Smoke","Sanity"})
 	public void test() {
 		lg=new LoginPage();
 		lg.EnteruNp(prop.getProperty("username"), prop.getProperty("password"));

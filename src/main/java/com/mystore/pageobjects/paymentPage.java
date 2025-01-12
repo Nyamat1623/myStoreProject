@@ -1,8 +1,12 @@
 package com.mystore.pageobjects;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.mystore.base.baseClass;
 
@@ -36,6 +40,10 @@ public class paymentPage extends baseClass{
 		cvc_BTN.sendKeys("111");
 		expiryMonth_BTN.sendKeys("12");
 		expiryYear_BTN.sendKeys("2030");
+		
+		WebDriverWait wait=new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(confirmOrder_BTN));
+		
 		confirmOrder_BTN.click();
 		return new confirmationPage();
 	}

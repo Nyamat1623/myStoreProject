@@ -13,17 +13,17 @@ public class loginPage_Test extends baseClass {
 	homepage hp;
 	LoginPage lg;;
 	
-	
-	@BeforeMethod
-	public void setup() {
-		launchapp();
+	@Parameters("browser")
+	@BeforeMethod(groups = {"Smoke","Sanity","Regression"})
+	public void setup(String browser) {
+		launchapp(browser);
 	}
 	
-	@AfterMethod
+	@AfterMethod(groups = {"Smoke","Sanity","Regression"})
 	public void teardown() {
 		getDriver().quit();
 	}
-	@Test (dataProvider = "Sheet1",dataProviderClass = DataProviders.class)
+	@Test (dataProvider = "Sheet1",dataProviderClass = DataProviders.class,groups = {"Smoke","Sanity"})
 	public void test(String username,String password) {
 		
 		lg=new LoginPage();
