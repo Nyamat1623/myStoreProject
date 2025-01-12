@@ -12,7 +12,7 @@ public class addressPage extends baseClass{
 	WebElement ProceedAddress_BTN;
 	
 	public addressPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 	
 	public confirmaddress confirmaddress() {

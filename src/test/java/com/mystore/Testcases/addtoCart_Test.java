@@ -30,13 +30,14 @@ public class addtoCart_Test extends baseClass {
 	 
 	@AfterMethod
 	public void teardown() {
-		driver.quit();
+		getDriver().quit();
 	}
 	
 	@Test
 	public void test() {
 		lg=new LoginPage();
-		hm=lg.login(prop.getProperty("username"), prop.getProperty("password"));
+		lg.EnteruNp(prop.getProperty("username"), prop.getProperty("password"));
+		hm=lg.loginclick();
 		proceedTocart=hm.Viewprod_Click();
 		proceedTocart.Enter_quantity();
 		

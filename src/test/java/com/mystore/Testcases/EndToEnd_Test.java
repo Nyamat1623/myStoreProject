@@ -4,6 +4,7 @@ import org.openqa.selenium.chromium.AddHasLaunchApp;
 import org.testng.annotations.*;
 
 import com.mystore.base.baseClass;
+import com.mystore.dataprovider.DataProviders;
 import com.mystore.pageobjects.LoginPage;
 import com.mystore.pageobjects.addressPage;
 import com.mystore.pageobjects.confirmaddress;
@@ -29,14 +30,14 @@ public class EndToEnd_Test extends baseClass {
 	
 	@AfterMethod
 	public void teardown(){
-		driver.quit();
+		getDriver().quit();
 		}
 	
-	@Test
-	public void test() {
+	@Test (dataProvider = "Sheet1",dataProviderClass = DataProviders.class)
+	public void test(String username,String password) {
 		lg=new LoginPage();
-
-		hm=lg.login(prop.getProperty("username"), prop.getProperty("password"));
+		lg.EnteruNp(username, password);
+		hm=lg.loginclick();
 		proceedTocart=hm.Viewprod_Click();
 		adp=proceedTocart.Enter_quantity();
 		cad=adp.confirmaddress();

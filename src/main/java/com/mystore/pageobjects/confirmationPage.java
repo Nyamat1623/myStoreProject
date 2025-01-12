@@ -18,7 +18,7 @@ public class confirmationPage extends baseClass{
 	WebElement Continue_BTN;
 	
 	public confirmationPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 	
 	public void orderConfirmed() {

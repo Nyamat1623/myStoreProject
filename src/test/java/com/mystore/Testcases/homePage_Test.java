@@ -24,7 +24,7 @@ public class homePage_Test extends baseClass {
 
 	@AfterMethod
 	public void teardown() {
-		driver.quit();
+		getDriver().quit();
 	}
 
 	@Test
@@ -32,23 +32,20 @@ public class homePage_Test extends baseClass {
 		
 		hm=new homepage();
 		lg=new LoginPage();
-		
-		lg.login(prop.getProperty("username"), prop.getProperty("password"));
+		lg.EnteruNp(prop.getProperty("username"), prop.getProperty("password"));
+		//lg.login(prop.getProperty("username"), prop.getProperty("password"));
 
+		lg.loginclick();
+		
 		String hpurl=hm.HomepagecurrentUrl();
 		Assert.assertEquals(hpurl, "https://automationexercise.com/");
 		System.out.println("Current URL : "+hpurl);
 		
-		String hptitle=driver.getTitle();
+		String hptitle=getDriver().getTitle();
 		Assert.assertEquals(hptitle, "Automation Exercise");
 		System.out.println("Current Title : "+hptitle);
 
 		//clicking on view product
-		
-		
-
-
-
 
 
 	}

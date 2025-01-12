@@ -27,7 +27,7 @@ public class paymentPage extends baseClass{
 	WebElement confirmOrder_BTN;
 	
 	public paymentPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 	
 	public confirmationPage makePayment() {

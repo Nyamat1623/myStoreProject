@@ -23,16 +23,16 @@ public class proceedTocart extends baseClass {
 	WebElement cartView_BTN;
 	
 	public proceedTocart() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 	
 	public addressPage Enter_quantity() {
 		select_quantityBTN.clear();
 		select_quantityBTN.sendKeys("3");
 		ProceedtoCart_BTN.click();
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(15));
+		WebDriverWait wait=new WebDriverWait(getDriver(), Duration.ofSeconds(15));
 		wait.until(ExpectedConditions.visibilityOf(cartView_BTN));
-		String AddtocartMSG=driver.findElement(By.xpath("//p[@class='text-center']")).getText();
+		String AddtocartMSG=getDriver().findElement(By.xpath("//p[@class='text-center']")).getText();
 		System.out.println(AddtocartMSG);
 		cartView_BTN.click();
 		

@@ -24,12 +24,16 @@ public class LoginPage extends baseClass {
 	WebElement Logout_btn;
 	
 	public LoginPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 	
-	public homepage login(String username, String password ) {
+	
+	public void EnteruNp(String username,String password) {
 		Emailtxt_box.sendKeys(username);
-		passtxt_box.sendKeys(pwd);
+		passtxt_box.sendKeys(password);
+	}
+	
+	public homepage loginclick() {
 		login_btn.click();
 		
 		return new homepage();

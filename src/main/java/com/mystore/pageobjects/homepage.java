@@ -17,12 +17,12 @@ public class homepage extends baseClass {
 	WebElement Logo_BTN;
 	
 	public homepage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 	
 	public proceedTocart Viewprod_Click() {
 		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		js.executeScript("arguments[0].scrollIntoView(true);", viewproduct1_BTN);
 		
 		viewproduct1_BTN.click();
@@ -34,7 +34,7 @@ public class homepage extends baseClass {
 	}
 	
 	public String HomepagecurrentUrl() {
-		String homepager_url=driver.getCurrentUrl();
+		String homepager_url=getDriver().getCurrentUrl();
 		return homepager_url;
 	}
 }

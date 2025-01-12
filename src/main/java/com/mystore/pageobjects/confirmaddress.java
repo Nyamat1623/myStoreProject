@@ -14,11 +14,11 @@ public class confirmaddress extends baseClass{
 	WebElement PlaceOrder_BTN;
 	
 	public confirmaddress() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 	
 	public paymentPage clickingPlaceOrder() {
-		JavascriptExecutor js=(JavascriptExecutor)driver ;
+		JavascriptExecutor js=(JavascriptExecutor)getDriver() ;
 		js.executeScript("arguments[0].scrollIntoView(true);", PlaceOrder_BTN);
 		
 		PlaceOrder_BTN.click();
