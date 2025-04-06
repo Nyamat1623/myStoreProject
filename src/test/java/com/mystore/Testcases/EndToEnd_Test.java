@@ -25,7 +25,7 @@ public class EndToEnd_Test extends baseClass {
 	
 	@BeforeMethod(groups = {"Smoke","Sanity","Regression"})
 	@Parameters("browser")
-	public void setup(@Optional("edge") String browser) {
+	public void setup(@Optional("chrome") String browser) {
 		launchapp(browser);
 	}
 	
