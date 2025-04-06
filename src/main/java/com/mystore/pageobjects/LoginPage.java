@@ -11,6 +11,7 @@ public class LoginPage extends baseClass {
 
 	String username=prop.getProperty("usename");
 	String pwd=prop.getProperty("password");
+	
 	@FindBy(name="email")
 	WebElement Emailtxt_box;
 	

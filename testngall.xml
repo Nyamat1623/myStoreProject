@@ -3,11 +3,6 @@
 <suite name="Suite">
   <test thread-count="5" name="Test_all">
   <parameter name="browser" value="Chrome"></parameter>
-  <groups>
-  <run>
-  <include name="Smoke"></include>
-  </run>
-  </groups>
     <classes>
       <class name="com.mystore.Testcases.addtoCart_Test"/>
       <class name="com.mystore.Testcases.loginPage_Test"/>

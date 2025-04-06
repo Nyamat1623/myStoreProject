@@ -13,16 +13,12 @@
         <methods>
           <include name="test"/>
           <include name="teardown"/>
-          <include name="loadconfig"/>
-          <include name="afterSuite"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.mystore.Testcases.loginPage_Test -->
       <class name="com.mystore.Testcases.addtoCart_Test">
         <methods>
           <include name="test"/>
-          <include name="loadconfig"/>
-          <include name="afterSuite"/>
           <include name="setup"/>
           <include name="teardown"/>
         </methods>
@@ -32,8 +28,6 @@
           <include name="setup"/>
           <include name="teardown"/>
           <include name="homepage"/>
-          <include name="loadconfig"/>
-          <include name="afterSuite"/>
         </methods>
       </class> <!-- com.mystore.Testcases.homePage_Test -->
     </classes>

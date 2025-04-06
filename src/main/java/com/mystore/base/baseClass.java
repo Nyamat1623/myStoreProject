@@ -28,12 +28,13 @@ public class baseClass {
 
 	public static ThreadLocal<RemoteWebDriver> driver=new ThreadLocal<RemoteWebDriver>();
 
-	//get driver from threadlocal map
+	//get driver from ThreadLocal map
 	public static WebDriver getDriver() {
 		return driver.get();
 	}
 
-	@BeforeSuite(groups = {"Smoke","Sanity","Regression"})
+	@BeforeSuite()
+	
 	public void loadconfig() {
 		
 		try {
@@ -57,7 +58,7 @@ public class baseClass {
 public static void TakingScreenshot(String filename) {
 	String datename=new SimpleDateFormat("yyyymmddhhss").format(new Date());
 	
-	String destinationFile=System.getProperty("user.dir")+"\\Screenshots"+filename+"_"+datename+" .png";
+	String destinationFile=System.getProperty("user.dir")+"\\Screenshots"+"_"+filename+datename+" .png";
 		File scr=((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
 		
 		try {
@@ -68,7 +69,7 @@ public static void TakingScreenshot(String filename) {
 		}
 	}
 
-	public static void launchapp(String browsername) {
+	public static void launchapp(@Optional("chrome")String browsername) {
 
 		//String browsername=prop.getProperty("browser");
 

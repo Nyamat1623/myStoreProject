@@ -23,9 +23,9 @@ public class EndToEnd_Test extends baseClass {
 	confirmaddress cad;
 	paymentPage pmnt;
 	
-	@Parameters("browser")
 	@BeforeMethod(groups = {"Smoke","Sanity","Regression"})
-	public void seup(String browser) {
+	@Parameters("browser")
+	public void setup(@Optional("edge") String browser) {
 		launchapp(browser);
 	}
 	

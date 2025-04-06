@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -19,9 +20,10 @@ public class homePage_Test extends baseClass {
 	LoginPage lg;
 	homepage hm;
 	
-	@Parameters("browser")
+	
 	@BeforeMethod(groups = {"Smoke","Sanity","Regression"})
-	public void setup(String browser) {
+	@Parameters("browser")
+	public void setup(@Optional("chrome") String browser) {
 		launchapp(browser);
 	}
 
@@ -30,7 +32,7 @@ public class homePage_Test extends baseClass {
 		getDriver().quit();
 	}
 
-	@Test(groups = "Smoke")
+	@Test(groups = {"Smoke","Sanity"})
 	public void homepage() {
 		
 		hm=new homepage();

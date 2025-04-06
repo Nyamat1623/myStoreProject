@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [CrossBrowser]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="FirefoxBrowserTest(failed)">
-    <parameter name="browser" value="firefox"/>
+<suite thread-count="3" parallel="tests" name="Failed suite [CrossBrowser]" guice-stage="DEVELOPMENT">
+  <test thread-count="3" parallel="tests" name="Chrome_Test(failed)">
+    <parameter name="browser" value="Chrome"/>
     <classes>
       <class name="com.mystore.Testcases.addtoCart_Test">
         <methods>
@@ -13,5 +13,5 @@
         </methods>
       </class> <!-- com.mystore.Testcases.addtoCart_Test -->
     </classes>
-  </test> <!-- FirefoxBrowserTest(failed) -->
+  </test> <!-- Chrome_Test(failed) -->
 </suite> <!-- Failed suite [CrossBrowser] -->

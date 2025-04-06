@@ -4,6 +4,8 @@
 
 
   <test name="Chrome_Test">
+  
+  
   <parameter name="browser" value="Chrome"></parameter>
     <classes>
       <class name="com.mystore.Testcases.addtoCart_Test"/>
